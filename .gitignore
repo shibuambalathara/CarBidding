@@ -1,0 +1,8 @@
+node_modules
+.keystone
+.env
+.swc
+.next
+package-lock.json
+yarn.lock
+bun.lockb
