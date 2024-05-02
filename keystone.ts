@@ -27,7 +27,7 @@ export default config(
     server: {
       cors: {
         origin: [
-          "https://equitas-admin.vercel.app/",
+          "https://equitas-admin.vercel.app",
           "https://equitas-liard.vercel.app",
           "https://localhost:3000",
           "http://localhost:3001",
