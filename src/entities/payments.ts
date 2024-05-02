@@ -140,7 +140,7 @@ export const Payment = list({
    
     }),
 
-    image: image({ storage: "my_s3_images" }),
+    image: image({ storage: "local_images" }),
     emdUpdate: relationship({
       ref: "EmdUpdate.payment",
       many: true,

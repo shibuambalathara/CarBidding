@@ -13,8 +13,11 @@ export default config(
     db: {
       provider: "postgresql",
       url:
-         process.env.DATABASE_URL ||
-        "postgresql://postgres:123@localhost:5432/automax1",
+        //  process.env.DATABASE_URL 
+        //  ||
+        // "postgresql://postgres:123@localhost:5432/automax1",
+        "postgresql://equitas:equitas123@dev-equitas-db.czzufe3stslo.ap-south-1.rds.amazonaws.com:5432/test_equitas?schema=public"
+
     },
     lists: lists,
     ui: {
@@ -79,24 +82,24 @@ export default config(
         storagePath: "public/files/excel",
       },
   
-      my_s3_images: {
-        kind: 's3',
-        type: 'image',
+      // my_s3_images: {
+      //   kind: 's3',
+      //   type: 'image',
       
-        bucketName: process.env.BUCKET_NAME,
-        region: process.env.REGION,
-        accessKeyId: process.env.ACCESS_KEY_ID,
-        secretAccessKey: process.env.SECRET_ACCESS_KEY,
+      //   bucketName: process.env.BUCKET_NAME,
+      //   region: process.env.REGION,
+      //   accessKeyId: process.env.ACCESS_KEY_ID,
+      //   secretAccessKey: process.env.SECRET_ACCESS_KEY,
         
-      },
-      my_s3_files: {
-        kind: 's3', 
-        type: 'file',
-        bucketName: process.env.BUCKET_NAME,
-        region: process.env.REGION,
-        accessKeyId: process.env.ACCESS_KEY_ID,
-        secretAccessKey: process.env.SECRET_ACCESS_KEY,
-      },
+      // },
+      // my_s3_files: {
+      //   kind: 's3', 
+      //   type: 'file',
+      //   bucketName: process.env.BUCKET_NAME,
+      //   region: process.env.REGION,
+      //   accessKeyId: process.env.ACCESS_KEY_ID,
+      //   secretAccessKey: process.env.SECRET_ACCESS_KEY,
+      // },
     }
   })
 );
