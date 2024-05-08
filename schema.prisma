@@ -491,6 +491,11 @@ model Notification {
   @@index([userId])
 }
 
+model SelectedVehicle {
+  id         String @id @default(cuid())
+  vehicleIds String @default("")
+}
+
 enum UserIdProofTypeType {
   aadhar
   drivingLicense

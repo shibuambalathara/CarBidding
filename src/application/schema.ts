@@ -17,6 +17,7 @@ import {Institution} from '../entities/institution'
 import {SellACar} from '../entities/sellACar'
 import {DeletedBid} from '../entities/deletedBids'
  import {Notification} from '../entities/notification'
+import { SelectedVehicle } from '../entities/selectedVehicles'
 
 export { router } from "./restRoutes";
 export { extendGraphqlSchema } from "./graphqlRoutes";
@@ -39,5 +40,6 @@ FindAuction,
 Institution,
 SellACar,
 DeletedBid,
- Notification
+ Notification,
+ SelectedVehicle
 };

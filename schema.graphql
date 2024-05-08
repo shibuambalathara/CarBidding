@@ -2747,6 +2747,41 @@ input NotificationCreateInput {
   user: UserRelateToOneForCreateInput
 }
 
+type SelectedVehicle {
+  id: ID!
+  vehicleIds: String
+}
+
+input SelectedVehicleWhereUniqueInput {
+  id: ID
+}
+
+input SelectedVehicleWhereInput {
+  AND: [SelectedVehicleWhereInput!]
+  OR: [SelectedVehicleWhereInput!]
+  NOT: [SelectedVehicleWhereInput!]
+  id: IDFilter
+  vehicleIds: StringFilter
+}
+
+input SelectedVehicleOrderByInput {
+  id: OrderDirection
+  vehicleIds: OrderDirection
+}
+
+input SelectedVehicleUpdateInput {
+  vehicleIds: String
+}
+
+input SelectedVehicleUpdateArgs {
+  where: SelectedVehicleWhereUniqueInput!
+  data: SelectedVehicleUpdateInput!
+}
+
+input SelectedVehicleCreateInput {
+  vehicleIds: String
+}
+
 """
 The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
 """
@@ -2867,6 +2902,12 @@ type Mutation {
   updateNotifications(data: [NotificationUpdateArgs!]!): [Notification]
   deleteNotification(where: NotificationWhereUniqueInput!): Notification
   deleteNotifications(where: [NotificationWhereUniqueInput!]!): [Notification]
+  createSelectedVehicle(data: SelectedVehicleCreateInput!): SelectedVehicle
+  createSelectedVehicles(data: [SelectedVehicleCreateInput!]!): [SelectedVehicle]
+  updateSelectedVehicle(where: SelectedVehicleWhereUniqueInput!, data: SelectedVehicleUpdateInput!): SelectedVehicle
+  updateSelectedVehicles(data: [SelectedVehicleUpdateArgs!]!): [SelectedVehicle]
+  deleteSelectedVehicle(where: SelectedVehicleWhereUniqueInput!): SelectedVehicle
+  deleteSelectedVehicles(where: [SelectedVehicleWhereUniqueInput!]!): [SelectedVehicle]
   endSession: Boolean!
   authenticateUserWithPassword(mobile: String!, password: String!): UserAuthenticationWithPasswordResult
   createInitialUser(data: CreateInitialUserInput!): UserAuthenticationWithPasswordSuccess!
@@ -2968,6 +3009,9 @@ type Query {
   notifications(where: NotificationWhereInput! = {}, orderBy: [NotificationOrderByInput!]! = [], take: Int, skip: Int! = 0): [Notification!]
   notification(where: NotificationWhereUniqueInput!): Notification
   notificationsCount(where: NotificationWhereInput! = {}): Int
+  selectedVehicles(where: SelectedVehicleWhereInput! = {}, orderBy: [SelectedVehicleOrderByInput!]! = [], take: Int, skip: Int! = 0): [SelectedVehicle!]
+  selectedVehicle(where: SelectedVehicleWhereUniqueInput!): SelectedVehicle
+  selectedVehiclesCount(where: SelectedVehicleWhereInput! = {}): Int
   keystone: KeystoneMeta!
   authenticatedItem: AuthenticatedItem
 
